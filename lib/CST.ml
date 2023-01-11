@@ -9,38 +9,27 @@ open! Sexplib.Conv
 open Tree_sitter_run
 
 type auto_res_mark = Token.t
-[@@deriving sexp_of]
 
 type comment = Token.t
-[@@deriving sexp_of]
 
 type kwd_lit = Token.t
-[@@deriving sexp_of]
 
 type char_lit = Token.t
-[@@deriving sexp_of]
 
 type nil_lit = Token.t
-[@@deriving sexp_of]
 
 type tok_dquot_rep_pat_0d044a8_rep_bslash_pat_5058f1a_rep_pat_0d044a8_dquot =
   Token.t
-[@@deriving sexp_of]
 
 type tok_pat_0a702c4_rep_choice_pat_0a702c4 = Token.t
-[@@deriving sexp_of]
 
 type str_lit = Token.t
-[@@deriving sexp_of]
 
 type ws = Token.t
-[@@deriving sexp_of]
 
 type num_lit = Token.t
-[@@deriving sexp_of]
 
 type bool_lit = Token.t
-[@@deriving sexp_of]
 
 type anon_choice_read_cond_lit_137feb9 = [
     `Read_cond_lit of read_cond_lit
@@ -79,7 +68,7 @@ and form = [
     )
   | `Regex_lit of (
         Token.t (* "#" *)
-      * tok_dquot_rep_pat_0d044a8_rep_bslash_pat_5058f1a_rep_pat_0d044a8_dquot (*tok*)
+      * tok_dquot_rep_pat_0d044a8_rep_bslash_pat_5058f1a_rep_pat_0d044a8_dquot
     )
   | `Read_cond_lit of read_cond_lit
   | `Spli_read_cond_lit of (
@@ -197,22 +186,19 @@ and source = [ `Form of form | `Gap of gap ] list (* zero or more *)
 
 and sym_lit = (
     metadata_lit list (* zero or more *)
-  * tok_pat_0a702c4_rep_choice_pat_0a702c4 (*tok*)
+  * tok_pat_0a702c4_rep_choice_pat_0a702c4
 )
-[@@deriving sexp_of]
 
 type regex_lit (* inlined *) = (
     Token.t (* "#" *)
-  * tok_dquot_rep_pat_0d044a8_rep_bslash_pat_5058f1a_rep_pat_0d044a8_dquot (*tok*)
+  * tok_dquot_rep_pat_0d044a8_rep_bslash_pat_5058f1a_rep_pat_0d044a8_dquot
 )
-[@@deriving sexp_of]
 
 type anon_fn_lit (* inlined *) = (
     metadata_lit list (* zero or more *)
   * Token.t (* "#" *)
   * bare_list_lit
 )
-[@@deriving sexp_of]
 
 type derefing_lit (* inlined *) = (
     metadata_lit list (* zero or more *)
@@ -220,14 +206,12 @@ type derefing_lit (* inlined *) = (
   * gap list (* zero or more *)
   * form
 )
-[@@deriving sexp_of]
 
 type dis_expr (* inlined *) = (
     Token.t (* "#_" *)
   * gap list (* zero or more *)
   * form
 )
-[@@deriving sexp_of]
 
 type evaling_lit (* inlined *) = (
     metadata_lit list (* zero or more *)
@@ -239,7 +223,6 @@ type evaling_lit (* inlined *) = (
       | `Sym_lit of sym_lit
     ]
 )
-[@@deriving sexp_of]
 
 type ns_map_lit (* inlined *) = (
     metadata_lit list (* zero or more *)
@@ -248,7 +231,6 @@ type ns_map_lit (* inlined *) = (
   * gap list (* zero or more *)
   * bare_map_lit
 )
-[@@deriving sexp_of]
 
 type quoting_lit (* inlined *) = (
     metadata_lit list (* zero or more *)
@@ -256,13 +238,11 @@ type quoting_lit (* inlined *) = (
   * gap list (* zero or more *)
   * form
 )
-[@@deriving sexp_of]
 
 type set_lit (* inlined *) = (
     metadata_lit list (* zero or more *)
   * bare_set_lit
 )
-[@@deriving sexp_of]
 
 type splicing_read_cond_lit (* inlined *) = (
     metadata_lit list (* zero or more *)
@@ -270,14 +250,12 @@ type splicing_read_cond_lit (* inlined *) = (
   * ws (*tok*) list (* zero or more *)
   * bare_list_lit
 )
-[@@deriving sexp_of]
 
 type sym_val_lit (* inlined *) = (
     Token.t (* "##" *)
   * gap list (* zero or more *)
   * sym_lit
 )
-[@@deriving sexp_of]
 
 type syn_quoting_lit (* inlined *) = (
     metadata_lit list (* zero or more *)
@@ -285,7 +263,6 @@ type syn_quoting_lit (* inlined *) = (
   * gap list (* zero or more *)
   * form
 )
-[@@deriving sexp_of]
 
 type tagged_or_ctor_lit (* inlined *) = (
     metadata_lit list (* zero or more *)
@@ -295,7 +272,6 @@ type tagged_or_ctor_lit (* inlined *) = (
   * gap list (* zero or more *)
   * form
 )
-[@@deriving sexp_of]
 
 type unquote_splicing_lit (* inlined *) = (
     metadata_lit list (* zero or more *)
@@ -303,7 +279,6 @@ type unquote_splicing_lit (* inlined *) = (
   * gap list (* zero or more *)
   * form
 )
-[@@deriving sexp_of]
 
 type unquoting_lit (* inlined *) = (
     metadata_lit list (* zero or more *)
@@ -311,7 +286,6 @@ type unquoting_lit (* inlined *) = (
   * gap list (* zero or more *)
   * form
 )
-[@@deriving sexp_of]
 
 type var_quoting_lit (* inlined *) = (
     metadata_lit list (* zero or more *)
@@ -319,14 +293,8 @@ type var_quoting_lit (* inlined *) = (
   * gap list (* zero or more *)
   * form
 )
-[@@deriving sexp_of]
 
 type vec_lit (* inlined *) = (
     metadata_lit list (* zero or more *)
   * bare_vec_lit
 )
-[@@deriving sexp_of]
-
-let dump_tree root =
-  sexp_of_source root
-  |> Print_sexp.to_stdout
