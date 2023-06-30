@@ -19,23 +19,17 @@ let token (env : env) (tok : Tree_sitter_run.Token.t) =
 let blank (env : env) () =
   R.Tuple []
 
-let map_auto_res_mark (env : env) (tok : CST.auto_res_mark) =
-  (* auto_res_mark *) token env tok
-
 let map_comment (env : env) (tok : CST.comment) =
   (* comment *) token env tok
 
-let map_kwd_lit (env : env) (tok : CST.kwd_lit) =
-  (* kwd_lit *) token env tok
+let map_ws (env : env) (tok : CST.ws) =
+  (* ws *) token env tok
+
+let map_auto_res_mark (env : env) (tok : CST.auto_res_mark) =
+  (* auto_res_mark *) token env tok
 
 let map_char_lit (env : env) (tok : CST.char_lit) =
   (* char_lit *) token env tok
-
-let map_nil_lit (env : env) (tok : CST.nil_lit) =
-  (* nil_lit *) token env tok
-
-let map_tok_dquot_rep_pat_0d044a8_rep_bslash_pat_5058f1a_rep_pat_0d044a8_dquot (env : env) (tok : CST.tok_dquot_rep_pat_0d044a8_rep_bslash_pat_5058f1a_rep_pat_0d044a8_dquot) =
-  (* tok_dquot_rep_pat_0d044a8_rep_bslash_pat_5058f1a_rep_pat_0d044a8_dquot *) token env tok
 
 let map_tok_pat_0a702c4_rep_choice_pat_0a702c4 (env : env) (tok : CST.tok_pat_0a702c4_rep_choice_pat_0a702c4) =
   (* tok_pat_0a702c4_rep_choice_pat_0a702c4 *) token env tok
@@ -43,8 +37,14 @@ let map_tok_pat_0a702c4_rep_choice_pat_0a702c4 (env : env) (tok : CST.tok_pat_0a
 let map_str_lit (env : env) (tok : CST.str_lit) =
   (* str_lit *) token env tok
 
-let map_ws (env : env) (tok : CST.ws) =
-  (* ws *) token env tok
+let map_nil_lit (env : env) (tok : CST.nil_lit) =
+  (* nil_lit *) token env tok
+
+let map_kwd_lit (env : env) (tok : CST.kwd_lit) =
+  (* kwd_lit *) token env tok
+
+let map_tok_dquot_rep_pat_0d044a8_rep_bslash_pat_5058f1a_rep_pat_0d044a8_dquot (env : env) (tok : CST.tok_dquot_rep_pat_0d044a8_rep_bslash_pat_5058f1a_rep_pat_0d044a8_dquot) =
+  (* tok_dquot_rep_pat_0d044a8_rep_bslash_pat_5058f1a_rep_pat_0d044a8_dquot *) token env tok
 
 let map_num_lit (env : env) (tok : CST.num_lit) =
   (* num_lit *) token env tok

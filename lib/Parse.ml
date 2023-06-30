@@ -32,16 +32,16 @@ let extras = [
 ]
 
 let children_regexps : (string * Run.exp option) list = [
-  "auto_res_mark", None;
   "comment", None;
-  "kwd_lit", None;
+  "tok_pat_0a702c4_rep_choice_pat_0a702c4", None;
+  "auto_res_mark", None;
   "char_lit", None;
-  "nil_lit", None;
-  "str_lit", None;
   "tok_dquot_rep_pat_0d044a8_rep_bslash_pat_5058f1a_rep_pat_0d044a8_dquot",
   None;
-  "tok_pat_0a702c4_rep_choice_pat_0a702c4", None;
   "ws", None;
+  "nil_lit", None;
+  "kwd_lit", None;
+  "str_lit", None;
   "num_lit", None;
   "bool_lit", None;
   "regex_lit",
@@ -429,37 +429,7 @@ let children_regexps : (string * Run.exp option) list = [
   );
 ]
 
-let trans_auto_res_mark ((kind, body) : mt) : CST.auto_res_mark =
-  match body with
-  | Leaf v -> v
-  | Children _ -> assert false
-
 let trans_comment ((kind, body) : mt) : CST.comment =
-  match body with
-  | Leaf v -> v
-  | Children _ -> assert false
-
-let trans_kwd_lit ((kind, body) : mt) : CST.kwd_lit =
-  match body with
-  | Leaf v -> v
-  | Children _ -> assert false
-
-let trans_char_lit ((kind, body) : mt) : CST.char_lit =
-  match body with
-  | Leaf v -> v
-  | Children _ -> assert false
-
-let trans_nil_lit ((kind, body) : mt) : CST.nil_lit =
-  match body with
-  | Leaf v -> v
-  | Children _ -> assert false
-
-let trans_str_lit ((kind, body) : mt) : CST.str_lit =
-  match body with
-  | Leaf v -> v
-  | Children _ -> assert false
-
-let trans_tok_dquot_rep_pat_0d044a8_rep_bslash_pat_5058f1a_rep_pat_0d044a8_dquot ((kind, body) : mt) : CST.tok_dquot_rep_pat_0d044a8_rep_bslash_pat_5058f1a_rep_pat_0d044a8_dquot =
   match body with
   | Leaf v -> v
   | Children _ -> assert false
@@ -469,7 +439,37 @@ let trans_tok_pat_0a702c4_rep_choice_pat_0a702c4 ((kind, body) : mt) : CST.tok_p
   | Leaf v -> v
   | Children _ -> assert false
 
+let trans_auto_res_mark ((kind, body) : mt) : CST.auto_res_mark =
+  match body with
+  | Leaf v -> v
+  | Children _ -> assert false
+
+let trans_char_lit ((kind, body) : mt) : CST.char_lit =
+  match body with
+  | Leaf v -> v
+  | Children _ -> assert false
+
+let trans_tok_dquot_rep_pat_0d044a8_rep_bslash_pat_5058f1a_rep_pat_0d044a8_dquot ((kind, body) : mt) : CST.tok_dquot_rep_pat_0d044a8_rep_bslash_pat_5058f1a_rep_pat_0d044a8_dquot =
+  match body with
+  | Leaf v -> v
+  | Children _ -> assert false
+
 let trans_ws ((kind, body) : mt) : CST.ws =
+  match body with
+  | Leaf v -> v
+  | Children _ -> assert false
+
+let trans_nil_lit ((kind, body) : mt) : CST.nil_lit =
+  match body with
+  | Leaf v -> v
+  | Children _ -> assert false
+
+let trans_kwd_lit ((kind, body) : mt) : CST.kwd_lit =
+  match body with
+  | Leaf v -> v
+  | Children _ -> assert false
+
+let trans_str_lit ((kind, body) : mt) : CST.str_lit =
   match body with
   | Leaf v -> v
   | Children _ -> assert false

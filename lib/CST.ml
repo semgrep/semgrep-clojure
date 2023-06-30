@@ -8,24 +8,24 @@
 open! Sexplib.Conv
 open Tree_sitter_run
 
-type auto_res_mark = Token.t
-
 type comment = Token.t
 
-type kwd_lit = Token.t
+type ws = Token.t
+
+type auto_res_mark = Token.t
 
 type char_lit = Token.t
-
-type nil_lit = Token.t
-
-type tok_dquot_rep_pat_0d044a8_rep_bslash_pat_5058f1a_rep_pat_0d044a8_dquot =
-  Token.t
 
 type tok_pat_0a702c4_rep_choice_pat_0a702c4 = Token.t
 
 type str_lit = Token.t
 
-type ws = Token.t
+type nil_lit = Token.t
+
+type kwd_lit = Token.t
+
+type tok_dquot_rep_pat_0d044a8_rep_bslash_pat_5058f1a_rep_pat_0d044a8_dquot =
+  Token.t
 
 type num_lit = Token.t
 
