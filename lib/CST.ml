@@ -298,3 +298,7 @@ type vec_lit (* inlined *) = (
     metadata_lit list (* zero or more *)
   * bare_vec_lit
 )
+
+type extra
+
+type extras = extra list

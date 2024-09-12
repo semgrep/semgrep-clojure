@@ -339,5 +339,5 @@ and map_sym_lit (env : env) ((v1, v2) : CST.sym_lit) =
 
 let dump_tree root =
   map_source () root
-  |> Tree_sitter_run.Raw_tree.to_string
-  |> print_string
+  |> Tree_sitter_run.Raw_tree.to_channel stdout
+let dump_extras (extras : CST.extras) = ()
